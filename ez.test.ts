@@ -4,7 +4,6 @@ const fs = require("fs")
 
 test('Easy Crm Test', async() => {
     //test 1
-    //console.log('Can I make another account with the same Email');
     await ez.navigate()
     await ez.driver.manage().window().maximize()
     await ez.driver.sleep(2000)
@@ -29,7 +28,7 @@ test('Easy Crm Test', async() => {
     await ez.driver.takeScreenshot(), "base64",
     (e) => {
         if (e) console.error(e)
-        else console.log('Image should show error message')
+        else console.log('Save successful')
     })
     await ez.click(ez.logEmail);
     await ez.setInput(ez.logEmail, 'test@email.com');
@@ -38,7 +37,7 @@ test('Easy Crm Test', async() => {
     await ez.click(ez.loginBtn);
     await ez.driver.sleep(2000)
     //test 2
-    //console.log('Can I create blank contacts?');
+    //('Can I create blank contacts?');
     await ez.click(ez.contacts)
     await ez.driver.sleep(2000)
     await ez.click(ez.createContact)
@@ -49,11 +48,11 @@ test('Easy Crm Test', async() => {
     await ez.driver.takeScreenshot(), "base64",
     (e) => {
         if (e) console.error(e)
-        else console.log('Yes you can-see image')
+        else console.log('Save successful')
     })
     //test 3
     await ez.driver.sleep(2000)
-    //console.log('Testing the first set of inputs and the add contact button');
+    //('Testing the first set of inputs and the add contact button');
     await ez.click(ez.createContact)
     await ez.driver.sleep(2000)
     await ez.click(ez.firstname)
@@ -68,10 +67,10 @@ test('Easy Crm Test', async() => {
     await ez.driver.takeScreenshot(), "base64",
     (e) => {
         if (e) console.error(e)
-        else console.log('First set shown and add button works')
+        else console.log('Save Successful')
     })
     //test 4
-    //console.log('Testing the 2nd set of inputs and submit btn')
+    //('Testing the 2nd set of inputs and submit btn')
     await ez.click(ez.createContact)
     await ez.driver.sleep(2000)
     await ez.click(ez.fname)
@@ -86,10 +85,10 @@ test('Easy Crm Test', async() => {
     await ez.driver.takeScreenshot(), "base64",
     (e) => {
         if (e) console.error(e)
-        else console.log('2nd inputs dont work')
+        else console.log('save successful')
     })
     // test 5
-    //console.log('Testing creating a meetings and inputs')
+    //('Testing creating a meetings and inputs')
     await ez.click(ez.meetings)
     await ez.driver.sleep(2000)
     await ez.click(ez.createMeeting)
@@ -108,32 +107,32 @@ test('Easy Crm Test', async() => {
     await ez.click(ez.addmeeting)
     await ez.setInput(ez.time, '10062023')
     await ez.click(ez.addmeeting)
-    await fs.writeFile(`${__dirname}/deleteBtn`,
+    await fs.writeFile(`${__dirname}/deleteBtn.png`,
     await ez.driver.takeScreenshot(), "base64",
     (e) => {
         if (e) console.error(e)
-        else console.log('delete button is in the way')
+        else console.log('save successful')
     })
     //test 5
-    //console.log('Testing for view of meeting')
+    //('Testing for view of meeting')
     await ez.click(ez.selectTitle)
     await ez.driver.sleep(2000)
-    await fs.writeFile(`${__dirname}/noMeetingTimeShown`,
+    await fs.writeFile(`${__dirname}/noMeetingTimeShown.png`,
     await ez.driver.takeScreenshot(), "base64",
     (e) => {
         if (e) console.error(e)
-        else console.log('no info')
+        else console.log('save successful')
     })
     //test 6
-    //console.log('Testing for blank meetings and selecting for editing')
+    //('Testing for blank meetings and selecting for editing')
     await ez.click(ez.createMeeting)
     await ez.setInput(ez.time, '10062023')
     await ez.click(ez.addmeeting)
-    await fs.writeFile(`${__dirname}/blankmeeting`,
+    await fs.writeFile(`${__dirname}/blankmeeting.png`,
     await ez.driver.takeScreenshot(), "base64",
     (e) => {
         if (e) console.error(e)
-        else console.log('cannot select without a title')
+        else console.log('save successful')
     })
 
     await ez.driver.quit()
