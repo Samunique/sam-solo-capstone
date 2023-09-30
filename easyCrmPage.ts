@@ -12,7 +12,9 @@ export class EasyCRM extends BasePage {
     regPassword: By = By.xpath('(//input[@id="password"])[2]');
     confirmPassword: By = By.xpath('//input[@id="confirm_password"]');
     registerBtn: By = By.xpath('//input[@value="register"]');
+    errormessageclose: By = By.xpath('//span[@id="alert-btn"]')
     contacts: By = By.xpath('//a[@href="/contacts"]');
+    closeBtn: By = By.xpath('//span[@id="alert-btn"]')
     createContact: By = By.xpath('//a[@href="/add-contact"]');
     submitBtn: By = By.xpath('//button[text()="Submit"]');
     firstname: By = By.xpath('//input[@id="first_name"]')
@@ -36,6 +38,16 @@ export class EasyCRM extends BasePage {
     place: By = By.xpath('//input[@id="place"]')
     time: By = By.xpath('//input[@id="datetime"]')
     selectTitle: By = By.xpath('//a[@href="/individual-meeting/12"]')
+    backtomeetingsBtn: By = By.xpath('//button[text()="back to meetings"]')
+    name: By = By.xpath('//a[@href="/individual-contact/29"]')
+    addphoneBtn: By = By.xpath('//a[@href="/add-phone/29"]')
+    phoneInput: By = By.xpath('//input[@id="phone"]')
+    addphone: By = By.xpath('//input[@id="submit"]')
+    addemailBtn: By= By.xpath('//a[@href="/add-email/29"]')
+    emailInput: By = By.xpath('//input[@id="email"]')
+    addemail: By = By.xpath('//input[@id="submit"]')
+    backtocontacts: By = By.xpath('//button[@class="main-button"]')
+    
 
     constructor() {
         super({url: "http://www.easy-crm.us"});
